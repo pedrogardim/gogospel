@@ -1,0 +1,3 @@
+[submodule "resources/js/shared"]
+	path = resources/js/shared
+	url = https://github.com/light-stand/gogospel-shared
