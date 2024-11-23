@@ -1,7 +1,7 @@
 import colors from "tailwindcss/colors";
 
 import { Mission } from "@/shared/mission/domain/Mission";
-import { icons } from "@/Components/ui/icon";
+import { icons } from "@/components/ui/icon";
 import { missionTypes } from "@/shared/mission/domain/MissionType";
 
 /**

@@ -12,7 +12,6 @@ export const MissionMap = ({missions}:{missions: Mission[]}) => {
     googleMapsApiKey: "AIzaSyCcY7g-HEkrTVHkuj5MvNDRPQNGeQF8CzA",
   });
 
-  console.log(missions)
   const [map, setMap] = React.useState<google.maps.Map | null>(null);
 
   const onLoad = React.useCallback((map: google.maps.Map) => {
@@ -51,8 +50,6 @@ export const MissionMap = ({missions}:{missions: Mission[]}) => {
   useEffect(() => {
     onRouteChange(pathname);
   }, [pathname, missions, map]);
-
-  console.log(isLoaded)
 
   return isLoaded ? (
     <GoogleMap
