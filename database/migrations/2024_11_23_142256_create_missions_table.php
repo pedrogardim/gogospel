@@ -18,7 +18,7 @@ return new class extends Migration
             $table->date('start_date')->nullable();
             $table->date('end_date')->nullable();
             $table->integer('duration')->nullable();
-            $table->string('categories')->nullable();
+            $table->json('categories')->nullable();
             $table->json('images')->nullable();
             $table->foreignId('user_id')->constrained()->cascadeOnDelete();
             $table->geometry('location', 'POINT', 4326)->nullable();

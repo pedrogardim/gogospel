@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreMissionRequest;
 use App\Http\Requests\UpdateMissionRequest;
 use App\Models\Mission;
+use Illuminate\Support\Facades\DB;
 use Inertia\Inertia;
 
 class MissionController extends Controller
@@ -14,7 +15,19 @@ class MissionController extends Controller
      */
     public function explore()
     {
-        return Mission::all();
+        $missions = Mission::select(
+            '*', 
+            DB::raw('st_x(location::geometry)::float as long'), 
+            DB::raw('st_y(location::geometry)::float as lat')
+        )->where('id','!=',null)->get();
+
+        $missions->transform(function ($mission) {
+            $mission->long = (float) $mission->long;
+            $mission->lat = (float) $mission->lat;
+            return $mission;
+        });
+        
+        return $missions;
     }
 
     /**

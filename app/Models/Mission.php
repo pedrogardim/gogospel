@@ -22,6 +22,11 @@ class Mission extends Model
         'location_name',
         'country',
         'approved',
-        'active',
+        'active'
+    ];
+
+    protected $casts = [
+        'categories' => 'json',
+        'images' => 'json'
     ];
 }
