@@ -11,12 +11,18 @@ export default {
     ],
 
     theme: {
-        extend: {
-            fontFamily: {
-                sans: ['Figtree', ...defaultTheme.fontFamily.sans],
-            },
-        },
+    	extend: {
+    		fontFamily: {
+    			sans: ['Figtree', ...defaultTheme.fontFamily.sans]
+    		},
+    		borderRadius: {
+    			lg: 'var(--radius)',
+    			md: 'calc(var(--radius) - 2px)',
+    			sm: 'calc(var(--radius) - 4px)'
+    		},
+    		colors: {}
+    	}
     },
-    darkMode: 'class',
-    plugins: [forms],
+    darkMode: ['class', 'class'],
+    plugins: [forms, require("tailwindcss-animate")],
 };
