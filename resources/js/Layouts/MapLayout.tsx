@@ -1,7 +1,7 @@
 
 import { PropsWithChildren } from 'react';
 
-import { MissionMap } from '@/mission/components/MissionMap';
+import { MissionMap } from '@/components/mission/MissionMap';
 import { Mission } from '@/shared/mission/domain/Mission';
 
 export default function MapLayout({ children, missions }: PropsWithChildren<{missions: Mission[]}>) {

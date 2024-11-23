@@ -1,3 +1,4 @@
+import { Button } from '@/components/ui/button';
 import Main from '@/Layouts/MainLayout';
 import MapLayout from '@/Layouts/MapLayout';
 import { Mission } from '@/shared/mission/domain/Mission';
@@ -17,6 +18,7 @@ export default function Explore({
                             {mission.title}
                         </div>
                     ))}
+                    <Button>Button</Button>
                 </div>
             </MapLayout>
         </Main>
