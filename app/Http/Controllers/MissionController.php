@@ -5,15 +5,26 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreMissionRequest;
 use App\Http\Requests\UpdateMissionRequest;
 use App\Models\Mission;
+use Inertia\Inertia;
 
 class MissionController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function explore()
     {
-        //
+        return Mission::all();
+    }
+
+    /**
+     * Display a listing of the resource.
+     */
+    public function viewExplore()
+    {
+        return Inertia::render('Mission/Explore', [
+            'missions' => $this->explore(),
+        ]);
     }
 
     /**
