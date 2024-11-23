@@ -1,23 +1,24 @@
-import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout';
-import Guest from '@/Layouts/GuestLayout';
+import Main from '@/Layouts/MainLayout';
+import MapLayout from '@/Layouts/MapLayout';
+import { Mission } from '@/shared/mission/domain/Mission';
 import { PageProps } from '@/types';
 import { Head } from '@inertiajs/react';
 
 export default function Explore({
     missions,
-}: PageProps<{ missions: any[]}>) {
+}: PageProps<{ missions: Mission[]}>) {
     return (
-        <Guest>
+        <Main>
             <Head title="Explore" />
-
-            <div className="py-12">
-                EXPLORE!
-                {missions.map((mission) => (
-                    <div key={mission.id}>
-                        {mission.title}
-                    </div>
-                ))}
-            </div>
-        </Guest>
+            <MapLayout missions={missions}>
+                <div className="py-12">
+                    {missions.map((mission) => (
+                        <div key={mission.id}>
+                            {mission.title}
+                        </div>
+                    ))}
+                </div>
+            </MapLayout>
+        </Main>
     );
 }
