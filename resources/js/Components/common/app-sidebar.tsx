@@ -30,8 +30,8 @@ export function AppSidebar() {
     };
 
   return (
-    <Sidebar className="z-20 w-24">
-      <SidebarContent>
+    <Sidebar className="z-20 bg-white">
+      <SidebarContent className="z-20 bg-white">
         <SidebarHeader>
           <img src={logo} alt="Logo" className="w-10 h-10 mx-auto mt-2" />
         </SidebarHeader>

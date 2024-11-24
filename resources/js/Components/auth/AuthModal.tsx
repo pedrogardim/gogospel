@@ -22,7 +22,7 @@ export const AuthModal = ({ onClose, open }: AuthModalProps) => {
   const { t } = useTranslation();
 
   const onLogin = () => {
-    router.visit("/auth/login");
+    router.visit("/login");
     onClose();
   };
 
